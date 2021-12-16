@@ -23,7 +23,14 @@ def transform_image(image_bytes):
                                         transforms.Normalize(
                                             [0.485, 0.456, 0.406],
                                             [0.229, 0.224, 0.225])])
-    image = Image.open(io.BytesIO(image_bytes))
+    try:
+        image = Image.open(io.BytesIO(image_bytes))
+    except Exception as e:
+        print('photo error!')
+    print("image mode:",image.mode)
+    # print("image type:",type(image))
+    if image.mode == "RGBA":
+        image =  image.convert("RGB")
     return my_transforms(image).unsqueeze(0)
 
 
