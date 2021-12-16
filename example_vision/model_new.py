@@ -27,7 +27,7 @@ def transform_image(image_bytes):
         image = Image.open(io.BytesIO(image_bytes))
     except Exception as e:
         print('photo error!')
-    print("image mode:",image.mode)
+    # print("image mode:",image.mode)
     # print("image type:",type(image))
     if image.mode == "RGBA":
         image =  image.convert("RGB")
