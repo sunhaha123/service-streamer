@@ -1,7 +1,7 @@
 # coding=utf-8
 # Created by Meteorix at 2019/8/9
 from flask import Flask, jsonify, request
-from example_vision.model import get_prediction,batch_prediction
+from model import get_prediction,batch_prediction
 from service_streamer import ThreadedStreamer
 from service_streamer import ManagedModel, Streamer
 
