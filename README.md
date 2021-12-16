@@ -1,5 +1,8 @@
 <h1 align="center">Service Streamer</h1>
-
+id qps
+/steram 112
+/prdict 19
+/stream_prdict 68
 <p align="center">
 Boosting your Web Services of Deep Learning Applications. 
 <a href="./README_zh.md">中文README</a>
