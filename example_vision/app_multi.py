@@ -1,6 +1,6 @@
 from service_streamer import ManagedModel
 from flask import Flask, jsonify, request
-from model import ClsModel
+from model_new import ClsModel
 from service_streamer import Streamer
 from gevent.pywsgi import WSGIServer
 
