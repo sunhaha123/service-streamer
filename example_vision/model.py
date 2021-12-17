@@ -59,6 +59,7 @@ def get_probality(image_bytes):
         return_info =  {"result": [str(e)]}
     return return_info
 
+#需要先更改densenet.py 将forward重写为extratror
 def get_vector(image_bytes):
     try:
         tensor = transform_image(image_bytes=image_bytes).to(device)
