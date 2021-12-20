@@ -2,7 +2,8 @@ from service_streamer import ManagedModel
 from flask import Flask, jsonify, request
 from model_new import ClsModel
 from service_streamer import Streamer
-from gevent.pywsgi import WSGIServer
+#框架中已经包含了多线程队列，因此不要再使用gevent
+# from gevent.pywsgi import WSGIServer
 
 app = Flask(__name__)
 model = None
@@ -35,7 +36,7 @@ def hello():
 
 if __name__ == "__main__":
     streamer = Streamer(ManagedClstModel, batch_size=32, max_latency=0.1, worker_num=2, cuda_devices=(0,))
-    WSGIServer(("0.0.0.0", 5005), app).serve_forever()
+    app.run(host="0.0.0.0", port=5005)
 
 
 
